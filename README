@@ -1,0 +1,59 @@
+# MongoDB Data Manipulation and Analysis
+
+This repository contains Python code for manipulating and analyzing data stored in a MongoDB database. The code uses the PyMongo library to connect to the database, retrieve, update, and analyze data. The data in this example pertains to food establishments in the UK.
+
+## Prerequisites
+
+Make sure you have the following Python libraries installed:
+
+- `pymongo`: For interacting with the MongoDB database.
+- `pprint`: For pretty printing results.
+- `pandas`: For data analysis and manipulation.
+
+## Connecting to MongoDB
+
+The code establishes a connection to a MongoDB server running on the default port (27017). A database named 'uk-food' is used, with a collection named 'establishments'.
+
+## Database and Collection Information
+
+- `list_database_names()`: Lists the names of all available databases.
+- `list_collection_names()`: Lists the collections within the 'uk-food' database.
+
+## Data Retrieval and Manipulation
+
+- Retrieving a document: `db.establishments.find_one()`
+- Inserting a new document: `establishments.insert_one(penang_flavours)`
+- Updating a document: `establishments.update_one()`
+- Counting documents: `db.establishments.find().count()`
+- Deleting documents: `db.establishments.remove()`
+
+## Data Conversion and Type Changes
+
+- Converting longitude and latitude strings to floats/doubles.
+- Setting non-rating values to Null.
+- Changing the data type of 'RatingValue' from String to Integer.
+
+## Data Analysis and Querying
+
+- Finding establishments with specific criteria, such as hygiene score, local authority, and rating value.
+- Counting documents based on specific criteria.
+- Performing complex queries using regular expressions and geospatial searches.
+
+## Aggregation Pipeline
+
+The code includes an example of an aggregation pipeline. This pipeline does the following:
+
+1. Matches establishments with a hygiene score of 0.
+2. Groups the matches by Local Authority.
+3. Sorts the matches from highest to lowest count.
+4. Limits the results to the top 5 Local Authorities with a hygiene score of 0.
+
+## Output
+
+The code outputs results using `pprint` for easy reading and `pandas` DataFrames for structured data analysis.
+
+Ensure you have a running MongoDB server with the appropriate data or update the database and collection names to match your environment.
+
+Please review and adapt the code to your specific data and requirements.
+
+README credits to ChatGPT, reviewed and/or amended by this author.
